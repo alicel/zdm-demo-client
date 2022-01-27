@@ -1,0 +1,61 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/jettison-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/cassandra-driver-core-3.11.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/logback-core-1.0.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/jersey-json-1.19.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/asm-commons-5.0.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/jnr-posix-3.0.44.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/jersey-client-1.19.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/jersey-core-1.19.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/netty-handler-4.0.56.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/jaxb-impl-2.2.3-1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/jackson-core-2.7.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/jnr-x86asm-1.0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/commons-logging-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/activation-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/jsr181-api-1.0-MR1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/jffi-1.2.16-native.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/netty-buffer-4.0.56.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/jersey-server-1.19.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/jnr-constants-0.9.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/jsr311-api-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/jackson-databind-2.7.9.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/stax2-api-3.1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/stax-api-1.0-2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/jcl-over-slf4j-1.7.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/jackson-jaxrs-1.9.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/commons-io-2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/netty-codec-4.0.56.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/asm-analysis-5.0.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/asm-tree-5.0.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/joda-time-2.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/slf4j-api-1.7.25.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/jnr-ffi-2.1.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/guava-19.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/noggit-0.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/asm-5.0.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/asm-util-5.0.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/netty-transport-4.0.56.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/solr-solrj-6.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/httpcore-4.4.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/httpclient-4.4.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/jaxb-api-2.2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/jackson-mapper-asl-1.9.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/zookeeper-3.4.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/jackson-core-asl-1.9.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/netty-common-4.0.56.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/jffi-1.2.16.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/jackson-annotations-2.7.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/jersey-servlet-1.19.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/httpmime-4.4.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/metrics-core-3.2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/jackson-xc-1.9.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/logback-classic-1.0.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/zdm-demo-client-0.1-SNAPSHOT/WEB-INF/lib/woodstox-core-asl-4.4.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
