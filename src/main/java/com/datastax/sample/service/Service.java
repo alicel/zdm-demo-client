@@ -1,19 +1,15 @@
 package com.datastax.sample.service;
 
-import java.util.List;
 import java.util.Random;
 
-import com.datastax.demo.utils.PropertyHelper;
-import com.datastax.driver.core.KeyspaceMetadata;
 import com.datastax.sample.dao.SampleDao;
 
 public class Service {
 
 	private SampleDao dao;
 
-	public Service() {		
-		String contactPointsStr = PropertyHelper.getProperty("contactPoints", "localhost");
-		this.dao = new SampleDao(contactPointsStr.split(","));
+	public Service() {
+		this.dao = new SampleDao();
 	}
 
 	public void insertRows(Integer startKey, Integer numberOfRows) {

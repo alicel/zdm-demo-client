@@ -17,7 +17,7 @@ public class SampleDao {
 	private PreparedStatement insertRowPS;
 	private PreparedStatement selectRowByKeyPS;
 
-	public SampleDao(String[] contactPoints) {
+	public SampleDao() {
 
 		String connectionMode = System.getProperty("connectionMode");
 
