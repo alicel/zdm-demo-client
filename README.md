@@ -9,6 +9,23 @@ git clone https://github.com/alicel/zdm-demo-client
 For the migration, you will need two clusters: Origin and Target. 
 You will also need to deploy the ZDM proxy (see the enablement material for all details and commands).
 
+Schema creation
+---
+The application uses a simple table with a key/value structure. This table must exist on Origin and Target.
+
+Create a keyspace called `sample_app_keyspace` on Origin and Target. 
+Typically this is done through CQL, specifying the desired replication strategy. If using Astra, create the keyspace through the Astra UI instead.
+
+Then, create the following table:
+```
+CREATE TABLE sample_app_keyspace.app_data (
+    app_key int PRIMARY KEY,
+    app_value text
+)
+```
+
+Building and running the application
+-----
 This application must be deployed to an instance in the Origin infrastructure that can reach the ZDM proxy and the Origin cluster.
 
 To build this application, run: 
@@ -24,6 +41,8 @@ To start the web server, run the following command setting `connectionMode` as a
 
 The web server listens on port 8080.
 
+Calling the application REST endpoints
+----
 To insert new rows, run:
 
 	curl -d 'startkey=5' -d'numrows=20' -X POST http://localhost:8080/zdm-demo-client/rest/newrows
