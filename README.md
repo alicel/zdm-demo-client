@@ -35,9 +35,10 @@ To build this application, run:
 The application will connect to Origin, Proxy or Target based on the value of the `connectionMode` property specified in the run command.
 Accepted values for this property are `ORIGIN`, `PROXY` and `TARGET`.
 
-To start the web server, run the following command setting `connectionMode` as appropriate (please note that this property is mandatory):
+To start the web server, run the following command setting `connectionMode` as appropriate (please note that this property is mandatory). 
+You will also need to pass the property `groupNumber` set to the number assigned to your workshop group:
 
-	mvn jetty:run -DconnectionMode=X
+	mvn jetty:run -DgroupNumber=N -DconnectionMode=X
 
 The web server listens on port 8080.
 
