@@ -28,6 +28,9 @@ Building and running the application
 -----
 This application must be deployed to an instance in the Origin infrastructure that can reach the ZDM proxy and the Origin cluster.
 
+Modify the constructor of the `SampleDao.java` class with credentials and connection parameters valid for your Origin cluster, 
+Target cluster and Proxy instances, changing the code in each `switch` case as appropriate.
+
 To build this application, run: 
 	
 	mvn clean install
@@ -48,7 +51,8 @@ To insert new rows, run:
 	curl -d 'startkey=5' -d'numrows=20' -X POST http://localhost:8080/zdm-demo-client/rest/newrows
 
 The command above will insert 20 new rows with sequential keys, starting with key 5 (included). 
-The row value will include a randomly selected name and surname, and the value of this row's key: an example row would have key `15` and value `I am Stella Walsh from row 15` 
+The row value will include a randomly selected name and surname, and the value of this row's key: an example row would have 
+key `15` and value `I am Stella Walsh from row 15` 
 
 To retrieve the value of a row (for example row `12`) run:
 
