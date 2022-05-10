@@ -36,7 +36,7 @@ The application will connect to Origin, Proxy or Target based on the value of th
 Accepted values for this property are `ORIGIN`, `PROXY` and `TARGET`.
 
 To start the web server, run the following command setting `connectionMode` as appropriate (please note that this property is mandatory). 
-You will also need to pass the property `groupNumber` set to the number assigned to your workshop group:
+You will also need to pass the mandatory property `groupNumber` set to the number assigned to your workshop group:
 
 	mvn jetty:run -DgroupNumber=N -DconnectionMode=X
 
