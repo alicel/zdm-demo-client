@@ -18,6 +18,10 @@ public class Service {
 			startKey = 0;
 		}
 
+		if (numberOfRows == null) {
+			numberOfRows = 10;
+		}
+
 		for ( int i = 0; i < numberOfRows; i++ ) {
 			Integer rowKey = startKey + i;
 			dao.insertRow(rowKey, "I am " + generateRandomName() + " from row " + rowKey);

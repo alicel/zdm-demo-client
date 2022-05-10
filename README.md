@@ -49,7 +49,7 @@ To insert new rows, run:
 	curl -d 'startkey=5' -d 'numrows=20' -X POST http://localhost:8080/zdm-demo-client/rest/newrows
 
 The command above will insert 20 new rows with sequential keys, starting with key 5 (included). 
-If a starting key is not specified, it defaults to 0.
+If a starting key is not specified, it defaults to 0. If the number of rows to be inserted is not passed, it defaults to 10.
 
 The row value will include a randomly selected name and surname, and the value of this row's key: an example row would have key `15` and value `I am Stella Walsh from row 15` 
 
