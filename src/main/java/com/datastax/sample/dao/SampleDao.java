@@ -54,7 +54,12 @@ public class SampleDao {
 
 		this.session = cluster.connect();
 
-		String keyspaceName = "zdm_demo_ks_" + System.getProperty("groupNumber");
+		String keyspaceName = "zdm_demo_ks";
+
+		String groupNumber = System.getProperty("groupNumber");
+		if (groupNumber != null && !groupNumber.isEmpty()) {
+			keyspaceName = keyspaceName + "_" + groupNumber;
+		}
 
 		insertRowPS = session.prepare("insert into "+ keyspaceName + ".app_data (app_key, app_value) values (?, ?)");
 		selectRowByKeyPS = session.prepare("select app_value from "+ keyspaceName + ".app_data where app_key = ?");
