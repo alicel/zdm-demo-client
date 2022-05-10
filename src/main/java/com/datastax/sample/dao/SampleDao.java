@@ -49,7 +49,8 @@ public class SampleDao {
 				break;
 			default:
 				throw new RuntimeException("Unsupported value for connectionMode property. " +
-											"Please set this property to a supported value: ORIGIN, PROXY, or TARGET");
+											"Please set this property to a supported value: ORIGIN, PROXY, or TARGET. " +
+											"See the README for details.");
 		}
 
 		this.session = cluster.connect();
@@ -57,9 +58,15 @@ public class SampleDao {
 		String keyspaceName = "zdm_demo_ks";
 
 		String groupNumber = System.getProperty("groupNumber");
-		if (groupNumber != null && !groupNumber.isEmpty()) {
-			keyspaceName = keyspaceName + "_" + groupNumber;
+		if (groupNumber == null || !groupNumber.isEmpty()) {
+			throw new RuntimeException("Group number missing. Please specify your group number by passing -DgroupNumber=<your_group_number> " +
+										"when starting up the client. See the README for details.");
 		}
+
+		//TODO add this later under a "workshop mode" config property
+//		if (groupNumber != null && !groupNumber.isEmpty()) {
+//			keyspaceName = keyspaceName + "_" + groupNumber;
+//		}
 
 		insertRowPS = session.prepare("insert into "+ keyspaceName + ".app_data (app_key, app_value) values (?, ?)");
 		selectRowByKeyPS = session.prepare("select app_value from "+ keyspaceName + ".app_data where app_key = ?");
