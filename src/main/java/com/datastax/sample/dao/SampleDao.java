@@ -58,7 +58,7 @@ public class SampleDao {
 		String keyspaceName = "zdm_demo_ks";
 
 		String groupNumber = System.getProperty("groupNumber");
-		if (groupNumber == null || !groupNumber.isEmpty()) {
+		if (groupNumber == null || groupNumber.isEmpty()) {
 			throw new RuntimeException("Group number missing. Please specify your group number by passing -DgroupNumber=<your_group_number> " +
 										"when starting up the client. See the README for details.");
 		}
