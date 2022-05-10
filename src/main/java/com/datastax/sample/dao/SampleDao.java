@@ -64,7 +64,7 @@ public class SampleDao {
 		}
 
 		keyspaceName = keyspaceName + "_" + groupNumber;
-		
+
 		insertRowPS = session.prepare("insert into "+ keyspaceName + ".app_data (app_key, app_value) values (?, ?)");
 		selectRowByKeyPS = session.prepare("select app_value from "+ keyspaceName + ".app_data where app_key = ?");
 	}

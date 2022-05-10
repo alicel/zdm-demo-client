@@ -13,15 +13,6 @@ public class Service {
 	}
 
 	public void insertRows(Integer startKey, Integer numberOfRows) {
-
-		if (startKey == null) {
-			startKey = 0;
-		}
-
-		if (numberOfRows == null) {
-			numberOfRows = 10;
-		}
-
 		for ( int i = 0; i < numberOfRows; i++ ) {
 			Integer rowKey = startKey + i;
 			dao.insertRow(rowKey, "I am " + generateRandomName() + " from row " + rowKey);
