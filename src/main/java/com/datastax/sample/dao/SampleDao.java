@@ -37,8 +37,9 @@ public class SampleDao {
 				break;
 			case "PROXY":
 				cluster = Cluster.builder()
-						.addContactPoints("...")	// Private IP address of each proxy instance
-						.withCredentials("xxxx", "yyyy")  // Target credentials, e.g. Astra client ID and client secret
+						.addContactPoints("127.0.0.1")	// Private IP address of each proxy instance
+						.withPort(9042)
+						.withCredentials("cassandra", "cassandra")  // Target credentials, e.g. Astra client ID and client secret
 						.build();
 				break;
 			case "TARGET":
