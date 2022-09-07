@@ -13,12 +13,17 @@ Schema creation
 ---
 The application uses a simple table with a key/value structure. This table must exist on Origin and Target.
 
-Create a keyspace called `sample_app_keyspace` on Origin and Target. 
-Typically this is done through CQL, specifying the desired replication strategy. If using Astra, create the keyspace through the Astra UI instead.
+Create a keyspace called `zdm_demo` on Origin and Target. 
+Typically this is done through CQL, specifying the desired replication strategy. For example:
+```
+CREATE KEYSPACE IF NOT EXISTS zdm_demo WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1' };
+```
+
+If using Astra, create the keyspace `zdm_demo` through the Astra UI instead.
 
 Then, create the following table:
 ```
-CREATE TABLE sample_app_keyspace.app_data (
+CREATE TABLE zdm_demo.app_data (
     app_key int PRIMARY KEY,
     app_value text
 )
@@ -34,6 +39,8 @@ Target cluster and Proxy instances, changing the code in each `switch` case as a
 To build this application, run: 
 	
 	mvn clean install
+
+(This has been tested with JDK versions 8, 12 and 14)
 
 The application will connect to Origin, Proxy or Target based on the value of the `connectionMode` property specified in the run command.
 Accepted values for this property are `ORIGIN`, `PROXY` and `TARGET`.

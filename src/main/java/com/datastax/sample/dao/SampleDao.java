@@ -1,7 +1,6 @@
 package com.datastax.sample.dao;
 
 import java.io.File;
-import java.util.List;
 
 import com.datastax.driver.core.*;
 import org.slf4j.Logger;
@@ -11,8 +10,6 @@ public class SampleDao {
 
 	private static Logger logger = LoggerFactory.getLogger(SampleDao.class);
 	private Session session;
-
-	private List<KeyspaceMetadata> keyspaces;
 
 	private PreparedStatement insertRowPS;
 	private PreparedStatement selectRowByKeyPS;
@@ -39,7 +36,7 @@ public class SampleDao {
 				cluster = Cluster.builder()
 						.addContactPoints("127.0.0.1")	// Private IP address of each proxy instance
 						.withPort(9042)
-						.withCredentials("cassandra", "cassandra")  // Target credentials, e.g. Astra client ID and client secret
+						.withCredentials("xxxx", "yyyy")  // Target credentials, e.g. Astra client ID and client secret
 						.build();
 				break;
 			case "TARGET":
@@ -55,8 +52,8 @@ public class SampleDao {
 
 		this.session = cluster.connect();
 
-		insertRowPS = session.prepare("insert into sample_app_keyspace.app_data (app_key, app_value) values (?, ?)");
-		selectRowByKeyPS = session.prepare("select app_value from sample_app_keyspace.app_data where app_key = ?");
+		insertRowPS = session.prepare("insert into zdm_demo.app_data (app_key, app_value) values (?, ?)");
+		selectRowByKeyPS = session.prepare("select app_value from zdm_demo.app_data where app_key = ?");
 	}
 
 	public void insertRow(Integer rowKey, String rowValue) {
