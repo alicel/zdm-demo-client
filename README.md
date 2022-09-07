@@ -13,12 +13,17 @@ Schema creation
 ---
 The application uses a simple table with a key/value structure. This table must exist on Origin and Target.
 
-Create a keyspace called `sample_app_keyspace` on Origin and Target. 
-Typically this is done through CQL, specifying the desired replication strategy. If using Astra, create the keyspace through the Astra UI instead.
+Create a keyspace called `zdm_demo` on Origin and Target. 
+Typically this is done through CQL, specifying the desired replication strategy. For example:
+```
+CREATE KEYSPACE IF NOT EXISTS zdm_demo WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1' };
+```
+
+If using Astra, create the keyspace `zdm_demo` through the Astra UI instead.
 
 Then, create the following table:
 ```
-CREATE TABLE sample_app_keyspace.app_data (
+CREATE TABLE zdm_demo.app_data (
     app_key int PRIMARY KEY,
     app_value text
 )
@@ -28,9 +33,14 @@ Building and running the application
 -----
 This application must be deployed to an instance in the Origin infrastructure that can reach the ZDM proxy and the Origin cluster.
 
+Modify the constructor of the `SampleDao.java` class with credentials and connection parameters valid for your Origin cluster, 
+Target cluster and Proxy instances, changing the code in each `switch` case as appropriate.
+
 To build this application, run: 
 	
 	mvn clean install
+
+(This has been tested with JDK versions 8, 12 and 14)
 
 The application will connect to Origin, Proxy or Target based on the value of the `connectionMode` property specified in the run command.
 Accepted values for this property are `ORIGIN`, `PROXY` and `TARGET`.
@@ -48,10 +58,10 @@ To insert new rows, run:
 
 	curl -d 'startkey=5' -d 'numrows=20' -X POST http://localhost:8080/zdm-demo-client/rest/newrows
 
-The command above will insert 20 new rows with sequential keys, starting with key 5 (included). 
-If a starting key is not specified, it defaults to 0. If the number of rows to be inserted is not passed, it defaults to 10.
+The command above will insert 20 new rows with sequential keys, starting with key 5 (included). If a starting key is not specified, it defaults to 0. If the number of rows to be inserted is not passed, it defaults to 10.
 
-The row value will include a randomly selected name and surname, and the value of this row's key: an example row would have key `15` and value `I am Stella Walsh from row 15` 
+The row value will include a randomly selected name and surname, and the value of this row's key: an example row would have 
+key `15` and value `I am Stella Walsh from row 15` 
 
 To retrieve the value of a row (for example row `12`) run:
 

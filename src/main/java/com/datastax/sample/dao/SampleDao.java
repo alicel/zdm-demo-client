@@ -1,7 +1,6 @@
 package com.datastax.sample.dao;
 
 import java.io.File;
-import java.util.List;
 
 import com.datastax.driver.core.*;
 import org.slf4j.Logger;
@@ -11,8 +10,6 @@ public class SampleDao {
 
 	private static Logger logger = LoggerFactory.getLogger(SampleDao.class);
 	private Session session;
-
-	private List<KeyspaceMetadata> keyspaces;
 
 	private PreparedStatement insertRowPS;
 	private PreparedStatement selectRowByKeyPS;
@@ -37,7 +34,8 @@ public class SampleDao {
 				break;
 			case "PROXY":
 				cluster = Cluster.builder()
-						.addContactPoints("...")	// Private IP address of each proxy instance
+						.addContactPoints("127.0.0.1")	// Private IP address of each proxy instance
+						.withPort(9042)
 						.withCredentials("xxxx", "yyyy")  // Target credentials, e.g. Astra client ID and client secret
 						.build();
 				break;
@@ -55,7 +53,7 @@ public class SampleDao {
 
 		this.session = cluster.connect();
 
-		String keyspaceName = "zdm_demo_ks";
+		String keyspaceName = "zdm_demo";
 
 		String groupNumber = System.getProperty("groupNumber");
 		if (groupNumber == null || groupNumber.isEmpty()) {
