@@ -28,6 +28,14 @@ public class SampleWS {
 	@Path("/newrows")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	public Response postInsertNewRows(@FormParam("startkey") Integer startKey, @FormParam("numrows") Integer numberOfRows) {
+		if (startKey == null) {
+			startKey = 0;
+		}
+
+		if (numberOfRows == null) {
+			numberOfRows = 10;
+		}
+		
 		service.insertRows(startKey, numberOfRows);
 		return Response.status(Status.OK).entity(numberOfRows + " rows inserted, starting with key " + startKey + "\n").build();
 	}

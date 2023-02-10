@@ -14,6 +14,8 @@ public class SampleDao {
 	private PreparedStatement insertRowPS;
 	private PreparedStatement selectRowByKeyPS;
 
+	private final String DEFAULT_KEYSPACE_NAME = "zdm_demo";
+
 	public SampleDao() {
 
 		String connectionMode = System.getProperty("connectionMode");
@@ -34,7 +36,7 @@ public class SampleDao {
 				break;
 			case "PROXY":
 				cluster = Cluster.builder()
-						.addContactPoints("127.0.0.1")	// Private IP address of each proxy instance
+						.addContactPoints("...")	// Private IP address of each proxy instance
 						.withPort(9042)
 						.withCredentials("xxxx", "yyyy")  // Target credentials, e.g. Astra client ID and client secret
 						.build();
@@ -47,13 +49,24 @@ public class SampleDao {
 				break;
 			default:
 				throw new RuntimeException("Unsupported value for connectionMode property. " +
-											"Please set this property to a supported value: ORIGIN, PROXY, or TARGET");
+											"Please set this property to a supported value: ORIGIN, PROXY, or TARGET. " +
+											"See the README for details.");
 		}
 
 		this.session = cluster.connect();
 
-		insertRowPS = session.prepare("insert into zdm_demo.app_data (app_key, app_value) values (?, ?)");
-		selectRowByKeyPS = session.prepare("select app_value from zdm_demo.app_data where app_key = ?");
+		String keyspaceName = DEFAULT_KEYSPACE_NAME;
+
+		String customKsName = System.getProperty("keyspaceName");
+		if (customKsName == null || customKsName.isEmpty()) {
+			System.out.printf("No custom keyspace name was specified, using the default keyspace %s", keyspaceName);
+		} else {
+			keyspaceName = customKsName;
+			System.out.printf("Using custom keyspace %s", keyspaceName);
+		}
+
+		insertRowPS = session.prepare("insert into "+ keyspaceName + ".app_data (app_key, app_value) values (?, ?)");
+		selectRowByKeyPS = session.prepare("select app_value from "+ keyspaceName + ".app_data where app_key = ?");
 	}
 
 	public void insertRow(Integer rowKey, String rowValue) {
